@@ -1,0 +1,17 @@
+name: tdd_with_bloc
+description: A project to lear tests with bloc pattern
+version: 1.0.0+1
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  bloc_pattern:
+  rxdart:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mockito: ^4.0.0
+flutter:
+  uses-material-design: true
