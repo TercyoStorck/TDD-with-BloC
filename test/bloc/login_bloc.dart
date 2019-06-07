@@ -8,7 +8,7 @@ main() {
   LoginBloc loginBloc;
   MockMyService service;
 
-  flutter_test.setUp(() async {
+  flutter_test.setUp(() {
     service = MockMyService();
     loginBloc = LoginBloc(
       myService: service,
@@ -33,7 +33,7 @@ main() {
     );
   });
 
-  flutter_test.test("when submit form set isPostingFormStream to true", () {
+  flutter_test.test("when submit form show indicator", () {
     loginBloc.submit();
 
     flutter_test.expect(
@@ -42,7 +42,7 @@ main() {
     );
   });
 
-  flutter_test.test("when submit form and username is null, emits errors", () {
+  flutter_test.test("when submit form and username is null emits errors", () {
     loginBloc.submit();
 
     flutter_test.expect(
@@ -56,7 +56,7 @@ main() {
     );
   });
 
-  flutter_test.test("when submit form and username is empty, emits errors", () {
+  flutter_test.test("when submit form and username is empty emits errors", () {
     loginBloc.userName("");
 
     loginBloc.submit();
@@ -72,7 +72,7 @@ main() {
     );
   });
 
-  flutter_test.test("when submit form and password is null, emits errors", () {
+  flutter_test.test("when submit form and password is null emits errors", () {
     loginBloc.submit();
 
     flutter_test.expect(
@@ -86,7 +86,7 @@ main() {
     );
   });
 
-  flutter_test.test("when submit form and password is empty, emits errors", () {
+  flutter_test.test("when submit form and password is empty emits errors", () {
     loginBloc.password("");
 
     loginBloc.submit();
@@ -102,7 +102,7 @@ main() {
     );
   });
 
-  flutter_test.test("when submit from and request fails, emits error", () {
+  flutter_test.test("when submit from and request fails emits error", () {
     final username = "username";
     final password = "password";
 
